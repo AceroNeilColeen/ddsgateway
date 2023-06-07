@@ -17,6 +17,7 @@ public $user2Service;
 
 public function __construct(User2Service$user2Service){
     $this->user2Service =$user2Service;
+    $this->middleware('auth:api', ['except' => ['login', 'refresh', 'logout']]);
 }
 
 //Index
